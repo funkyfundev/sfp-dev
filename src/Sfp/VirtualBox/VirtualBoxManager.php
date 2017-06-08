@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Sfp\VirtualBox;
 
 class VirtualBoxManager
@@ -99,6 +98,12 @@ class VirtualBoxManager
         return $status['VMState'];
     }
 
+    /**
+     * Shutdown VM
+     *
+     * @param  string     $vm
+     * @return string
+     */
     private function vmShutdown($vm)
     {
         $this->cmd(sprintf('VBoxManage controlvm %s poweroff', $vm));
@@ -110,7 +115,8 @@ class VirtualBoxManager
      * @param  string $vm
      * @return array $info
      */
-    private function getVmInfo($vm){
+    private function getVmInfo($vm)
+    {
         $output = $this->cmd(sprintf('VBoxManage showvminfo %s --machinereadable', $vm));
         $info = [];
         foreach(explode("\n", $output) as $line){

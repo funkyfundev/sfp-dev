@@ -7,7 +7,13 @@ class VirtualBoxConfig
     protected $vm_name;
     public $vm_ip;
 
-    public function __construct(array $config)
+    /**
+     * Constructor for VM config
+     *
+     * @param array $config
+     * @throws VirtualBoxException
+     */
+    public function __construct(array $config = [])
     {
         if(empty($config)) {
             throw new VirtualBoxException(VirtualBoxException::INVALID_CONFIG_KEY_SUPPLIED);
@@ -22,11 +28,21 @@ class VirtualBoxConfig
         }
     }
 
+    /**
+     * Get the VM name
+     *
+     * @return string
+     */
     public function getVmName()
     {
         return $this->vm_name;
     }
 
+    /**
+     * Get VM IP config
+     *
+     * @return string
+     */
     public function getVmIp()
     {
         return $this->vm_ip;

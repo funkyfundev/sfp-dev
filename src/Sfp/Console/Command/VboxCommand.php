@@ -32,7 +32,7 @@ class VboxCommand extends Command
     /**
      * Initial configuration commands
      *
-     * @return [type] [description]
+     * @return void
      */
     protected function configure()
     {
