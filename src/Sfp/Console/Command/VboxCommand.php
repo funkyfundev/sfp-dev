@@ -75,10 +75,10 @@ class VboxCommand extends Command
             case 'stop':
                 $this->vmStop($vm);
             break;
-            case 'status': 
+            case 'status':
                 $this->getVmStatus($vm);
             break;
-            case 'restart': 
+            case 'restart':
                 $this->vmRestart($vm);
             break;
             case 'raw-ip':
