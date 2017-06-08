@@ -43,6 +43,16 @@ class VirtualBoxManager
     }
 
     /**
+     * Get the VM IP from config
+     *
+     * @return string
+     */
+    public function getVmIp()
+    {
+        return $this->config->getVmIp();
+    }
+
+    /**
      * Execute command to start
      *
      * @return void
