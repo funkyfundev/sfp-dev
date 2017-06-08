@@ -213,7 +213,7 @@ class VboxCommand extends Command
         $this->output->writeln([
             SFP_COMMAND_TITLE,
             '',
-            'Command: sfp dev start|stop|status|restart|list-actions'
+            sprintf('Command: sfp dev or dev [%s]',  implode('|', $this->getAllowedActions()))
         ]);
     }
 
