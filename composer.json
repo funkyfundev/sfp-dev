@@ -1,0 +1,22 @@
+{
+    "name": "francis/sfp-dev",
+    "description": "local environment helper",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Francis Alvin Barretto",
+            "email": "francis.alvin.barretto@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/yaml": "^3.3",
+        "symfony/console": "^3.3",
+        "symfony/process": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    }
+}

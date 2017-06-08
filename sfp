@@ -1,0 +1,32 @@
+#!/usr/bin/env php
+<?php
+
+define('APP_DIRECTORY', __DIR__);
+define('APP_SRC_DIRECTORY', APP_DIRECTORY . '/src');
+define('APP_SFP_DIRECTORY', APP_SRC_DIRECTORY . '/Sfp');
+define('APP_SFP_LIB_DIRECTORY', APP_SFP_DIRECTORY . '/Lib');
+define('APP_CONFIG', APP_DIRECTORY. '/config.yml');
+
+require __DIR__.'/vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use Sfp\Console\Command\VboxCommand;
+
+$title = <<<ASCII
+      __                            _
+     / _|                          | |
+ ___| |_ _ __     ___ _ __ ___   __| |
+/ __|  _| '_ \   / __| '_ ` _ \ / _` |
+\__ \ | | |_) | | (__| | | | | | (_| |
+|___/_| | .__/   \___|_| |_| |_|\__,_|
+        | |
+        |_|
+ASCII;
+
+define('SFP_COMMAND_TITLE', $title);
+$application = new Application($title);
+
+$vbox = new VboxCommand();
+
+$application->add($vbox);
+$application->run();
